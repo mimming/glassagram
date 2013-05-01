@@ -16,7 +16,7 @@
 */
 //  Author: Jenny Murphy - http://google.com/+JennyMurphy
 // Modified by: Winnie Tong
-/*
+
 require_once 'config.php';
 require_once 'mirror-client.php';
 require_once 'google-api-php-client/src/Google_Client.php';
@@ -35,7 +35,7 @@ if (!isset($_SESSION['userid']) || get_credentials($_SESSION['userid']) == null)
 
 // A glass service for interacting with the Mirror API
 $mirror_service = new Google_MirrorService($client);
-
+/*
 // But first, handle POST data from the form (if there is any)
 switch ($_POST['operation']) {
   case "deleteContact":

@@ -10,14 +10,14 @@
     <file path="/notify.php" changelist="20c4a89a-276c-4b8d-9ad3-6f4c0f9d16dc" time="1367374656146" ignored="false" />
     <file path="/Google_REST.php" changelist="20c4a89a-276c-4b8d-9ad3-6f4c0f9d16dc" time="1366451499107" ignored="false" />
     <file path="/filters.php" changelist="20c4a89a-276c-4b8d-9ad3-6f4c0f9d16dc" time="1366609450440" ignored="false" />
-    <file path="/index.php" changelist="20c4a89a-276c-4b8d-9ad3-6f4c0f9d16dc" time="1367044621005" ignored="false" />
+    <file path="/index.php" changelist="20c4a89a-276c-4b8d-9ad3-6f4c0f9d16dc" time="1367395665916" ignored="false" />
     <file path="/glassagram.php" changelist="20c4a89a-276c-4b8d-9ad3-6f4c0f9d16dc" time="1366734523192" ignored="false" />
     <file path="$PROJECT_DIR$/../iseedeadpixels/config.php" changelist="20c4a89a-276c-4b8d-9ad3-6f4c0f9d16dc" time="1367140552833" ignored="false" />
     <file path="$PROJECT_DIR$/../iseedeadpixels/notify.php" changelist="20c4a89a-276c-4b8d-9ad3-6f4c0f9d16dc" time="1366962786268" ignored="false" />
     <file path="$PROJECT_DIR$/../iseedeadpixels/util.php" changelist="20c4a89a-276c-4b8d-9ad3-6f4c0f9d16dc" time="1367044448256" ignored="false" />
     <file path="$PROJECT_DIR$/../iseedeadpixels/index.php" changelist="20c4a89a-276c-4b8d-9ad3-6f4c0f9d16dc" time="1367098250040" ignored="false" />
     <file path="$PROJECT_DIR$/../iseedeadpixels/signout.php" changelist="20c4a89a-276c-4b8d-9ad3-6f4c0f9d16dc" time="1366955841876" ignored="false" />
-    <file path="/signout.php" changelist="20c4a89a-276c-4b8d-9ad3-6f4c0f9d16dc" time="1366955752690" ignored="false" />
+    <file path="/signout.php" changelist="20c4a89a-276c-4b8d-9ad3-6f4c0f9d16dc" time="1367396498433" ignored="false" />
     <file path="$PROJECT_DIR$/../iseedeadpixels/mirror-client.php" changelist="20c4a89a-276c-4b8d-9ad3-6f4c0f9d16dc" time="1366961037895" ignored="false" />
     <file path="$PROJECT_DIR$/../cremeglass/index.html" changelist="20c4a89a-276c-4b8d-9ad3-6f4c0f9d16dc" time="1367309837455" ignored="false" />
     <file path="/index.html" changelist="20c4a89a-276c-4b8d-9ad3-6f4c0f9d16dc" time="1367309624581" ignored="false" />
@@ -88,10 +88,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="notify.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="notify.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/notify.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="39" column="22" selection-start="1232" selection-end="1232" vertical-scroll-proportion="0.6276824">
+            <state line="108" column="0" selection-start="3092" selection-end="3092" vertical-scroll-proportion="-9.04">
               <folding>
                 <element signature="e#6#605#0" expanded="true" />
               </folding>
@@ -102,7 +102,16 @@
       <file leaf-file-name="config.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="73" selection-start="1129" selection-end="1129" vertical-scroll-proportion="0.33333334">
+            <state line="29" column="29" selection-start="1223" selection-end="1223" vertical-scroll-proportion="-9.375">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="config.php.default" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/config.php.default">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="29" column="0" selection-start="978" selection-end="1071" vertical-scroll-proportion="0.4535975">
               <folding />
             </state>
           </provider>
@@ -111,10 +120,9 @@
       <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="171" column="25" selection-start="6064" selection-end="6064" vertical-scroll-proportion="-47.1">
+            <state line="37" column="2" selection-start="1312" selection-end="1312" vertical-scroll-proportion="-11.1">
               <folding>
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="e#6#591#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -123,8 +131,10 @@
       <file leaf-file-name="signout.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/signout.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="2" selection-start="671" selection-end="671" vertical-scroll-proportion="-11.875">
-              <folding />
+            <state line="40" column="48" selection-start="1268" selection-end="1268" vertical-scroll-proportion="-25.0">
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -132,7 +142,7 @@
       <file leaf-file-name="glassagram.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/glassagram.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="147" column="65" selection-start="5782" selection-end="5810" vertical-scroll-proportion="0.33333334">
+            <state line="40" column="22" selection-start="1390" selection-end="1433" vertical-scroll-proportion="-25.0">
               <folding>
                 <element signature="e#6#591#0" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -145,8 +155,11 @@
       <file leaf-file-name="util.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/util.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="65" column="0" selection-start="2196" selection-end="2196" vertical-scroll-proportion="20.958334">
-              <folding />
+            <state line="64" column="0" selection-start="2142" selection-end="2142" vertical-scroll-proportion="-31.25">
+              <folding>
+                <marker date="1367393492000" expanded="true" signature="1497:1614" placeholder="..." />
+                <marker date="1367393492000" expanded="true" signature="1504:1596" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -154,10 +167,8 @@
       <file leaf-file-name="filters.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/filters.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="96" column="3" selection-start="2590" selection-end="2590" vertical-scroll-proportion="-60.0">
-              <folding>
-                <element signature="e#7#72#0" expanded="true" />
-              </folding>
+            <state line="109" column="0" selection-start="3081" selection-end="3099" vertical-scroll-proportion="3.125">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -165,7 +176,7 @@
       <file leaf-file-name="mirror-client.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mirror-client.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="137" column="29" selection-start="4679" selection-end="4679" vertical-scroll-proportion="-26.166666">
+            <state line="148" column="29" selection-start="4918" selection-end="4918" vertical-scroll-proportion="-26.166666">
               <folding />
             </state>
           </provider>
@@ -181,17 +192,17 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/config.php" />
         <option value="$PROJECT_DIR$/attachment-proxy.php" />
         <option value="$PROJECT_DIR$/google-api-php-client/src/io/Google_REST.php" />
         <option value="$PROJECT_DIR$/google-api-php-client/src/contrib/Google_MirrorService.php" />
-        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/mirror-client.php" />
         <option value="$PROJECT_DIR$/util.php" />
         <option value="$PROJECT_DIR$/glassagram.php" />
-        <option value="$PROJECT_DIR$/signout.php" />
         <option value="$PROJECT_DIR$/filters.php" />
         <option value="$PROJECT_DIR$/notify.php" />
+        <option value="$PROJECT_DIR$/signout.php" />
+        <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/config.php" />
       </list>
     </option>
   </component>
@@ -500,13 +511,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/SQLite.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="324" column="9" selection-start="7912" selection-end="7912" vertical-scroll-proportion="0.65416664">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/google-api-php-client/src/config.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="17" column="7" selection-start="609" selection-end="609" vertical-scroll-proportion="-0.12059765">
@@ -549,48 +553,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="73" selection-start="1129" selection-end="1129" vertical-scroll-proportion="0.33333334">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/glassagram.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="147" column="65" selection-start="5782" selection-end="5810" vertical-scroll-proportion="0.33333334">
-          <folding>
-            <element signature="e#6#591#0" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/signout.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="2" selection-start="671" selection-end="671" vertical-scroll-proportion="-11.875">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/util.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="65" column="0" selection-start="2196" selection-end="2196" vertical-scroll-proportion="20.958334">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="171" column="25" selection-start="6064" selection-end="6064" vertical-scroll-proportion="-47.1">
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/google-api-php-client/src/contrib/Google_MirrorService.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="1263" column="1" selection-start="44675" selection-end="44675" vertical-scroll-proportion="0.95401067">
@@ -600,26 +562,77 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mirror-client.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="137" column="29" selection-start="4679" selection-end="4679" vertical-scroll-proportion="-26.166666">
+        <state line="148" column="29" selection-start="4918" selection-end="4918" vertical-scroll-proportion="-26.166666">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/filters.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="96" column="3" selection-start="2590" selection-end="2590" vertical-scroll-proportion="-60.0">
+        <state line="109" column="0" selection-start="3081" selection-end="3099" vertical-scroll-proportion="3.125">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/util.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="64" column="0" selection-start="2142" selection-end="2142" vertical-scroll-proportion="-31.25">
           <folding>
-            <element signature="e#7#72#0" expanded="true" />
+            <marker date="1367393492000" expanded="true" signature="1497:1614" placeholder="..." />
+            <marker date="1367393492000" expanded="true" signature="1504:1596" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/notify.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="22" selection-start="1232" selection-end="1232" vertical-scroll-proportion="0.6276824">
+        <state line="108" column="0" selection-start="3092" selection-end="3092" vertical-scroll-proportion="-9.04">
           <folding>
             <element signature="e#6#605#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/signout.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="40" column="48" selection-start="1268" selection-end="1268" vertical-scroll-proportion="-25.0">
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="2" selection-start="1312" selection-end="1312" vertical-scroll-proportion="-11.1">
+          <folding>
+            <element signature="e#6#591#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/glassagram.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="40" column="22" selection-start="1390" selection-end="1433" vertical-scroll-proportion="-25.0">
+          <folding>
+            <element signature="e#6#591#0" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="29" selection-start="1223" selection-end="1223" vertical-scroll-proportion="-9.375">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.php.default">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="0" selection-start="978" selection-end="1071" vertical-scroll-proportion="0.4535975">
+          <folding />
         </state>
       </provider>
     </entry>

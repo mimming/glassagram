@@ -40,6 +40,22 @@ function insertTimelineItem($service, $timelineItem, $contentType, $attachment)
   }
 }
 
+function patchTimelineItem($service, $timelineItem, $contentType, $attachment)
+{
+  try {
+    $optParams = array();
+    if ($contentType != null && $attachment != null) {
+      $optParams['data'] = $attachment;
+      $optParams['mimeType'] = $contentType;
+    }
+    return $service->timeline->patch($timelineItem, $optParams);
+  } catch (Exception $e) {
+    print 'An error ocurred: ' . $e->getMessage();
+    return null;
+  }
+}
+
+
 /**
  * Subscribe to notifications for the current user.
  *

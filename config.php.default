@@ -26,3 +26,6 @@ $api_simple_key = "";
 $base_url = "https://glassagram.com";
 
 $sqlite_database = "";
+
+// Just in case you want to change it in different environments
+$contact_name = "Glassagram";

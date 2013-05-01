@@ -41,7 +41,6 @@ function get_google_api_client() {
 
   $client->setScopes(array(
     'https://www.googleapis.com/auth/glass.timeline',
-    'https://www.googleapis.com/auth/glass.location',
     'https://www.googleapis.com/auth/userinfo.profile'));
 
   return $client;
@@ -91,7 +90,7 @@ function init_db() {
 }
 
 function bootstrap_new_user() {
-  global $base_url;
+  global $base_url, $contact_name;
 
   $client = get_google_api_client();
   $client->setAccessToken(get_credentials($_SESSION['userid']));
@@ -109,7 +108,7 @@ function bootstrap_new_user() {
     $timeline_item->setMenuItems($menuItems);
   insertTimelineItem($mirror_service, $timeline_item, null, null);
 
-  insertContact($mirror_service, "glassagram", "Glassagram",
+  insertContact($mirror_service, "glassagram", $contact_name,
       $base_url . "/static/images/glassagram-dark-640x360.png");
 
   subscribeToNotifications($mirror_service, "timeline",

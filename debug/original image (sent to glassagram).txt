@@ -1,0 +1,37 @@
+{
+  "kind": "mirror#timelineItem",
+  "id": "922444c8-bc62-4cf2-8cef-56a816157269",
+  "created": "2013-04-22T06:39:38.258Z",
+  "updated": "2013-04-22T06:39:38.258Z",
+  "displayTime": "2013-04-22T06:39:38.258Z",
+  "etag": "\"65l248RmT5u5T68ScXs9DlhRDXA/bkf4xelpYL6AQfiZahdXdKmNgIM\"",
+  "recipients": [
+    {
+      "kind": "mirror#contact",
+      "source": "api:528686093096",
+      "id": "glassagram",
+      "displayName": "Glassagram",
+      "imageUrls": [
+        "https://glassagram.com/static/images/glassagram-dark-640x360.png"
+      ]
+    }
+  ],
+  "attachments": [
+    {
+      "id": "ps:5869557141753769330",
+      "contentType": "image/jpeg"
+    }
+  ],
+  "location": {
+    "kind": "mirror#location",
+    "timestamp": "2013-04-22T06:32:24.233Z",
+    "latitude": 37.4273713,
+    "longitude": -122.1361613,
+    "accuracy": 38
+  },
+  "menuItems": [
+    {
+      "action": "DELETE"
+    }
+  ]
+}

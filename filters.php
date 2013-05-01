@@ -117,8 +117,10 @@ function gd_filter_image($image_path, $filter_name)
 }
 
 function gd_process_image ($src) {
-    $filters = array('antique','blackwhite','boost','sepia');
-    $filtered_images = array();
+
+  $filters = array('antique','blackwhite','boost','sepia');
+
+  $filtered_images = array();
     foreach ($filters as $filter_name) {
 
         $filter = 'gd_filter_' . $filter_name;

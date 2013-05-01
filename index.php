@@ -71,13 +71,15 @@ foreach ($subscriptions['items'] as $subscription) {
   <title>Glassagram</title>
   <link href="./static/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
   <style>
-    .button-icon { max-width: 75px; }
     .tile {
       border-left: 1px solid #444;
       padding: 5px;
       list-style: none;
     }
-    .btn { width: 100%; }
+    .row {margin-top:3em;}
+    .row ol li {font-size:31.5px;}
+      .row .logo {text-align: center;}
+      .row ol li p {font-size:0.5em;}
   </style>
 </head>
 <body>
@@ -95,40 +97,46 @@ foreach ($subscriptions['items'] as $subscription) {
 </div>
 
 <div class="container">
-<ol>
-    <ul>
-    <div>
-      <h2>Enable Sharing Contact</h2>
+    <div class="row">
 
-      <p>Please enable Glassagram on
-        <a href="https://glass.google.com/myglass/share">MyGlass</a></p>
+        <div class="logo"><img src="static/images/glassagram-lol.png"/></div>
+        <ol>
+            <li>
+                <div>
+                <h2>Enable Sharing Contact</h2>
+                <p>Please enable Glassagram on
+                <a href="https://glass.google.com/myglass/share">MyGlass</a></p>
 
+                </div>
+            </li>
+            <!--li>
+                <div>
+                    <h2>Choose filters</h2>
+                    <p>Select up to 5 of your favorite filters to use with Glassagram. You can always come back to change up your selection.</p>
+                </div>
+            </li-->
+            <li>
+                <div>
+                    <h2>Take a picture!</h2>
+                    <p></p>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <h2>Share your picture with Glassagram</h2>
+                    <p>Glassagram will apply all the filters you selected and send a bundle of images back to you.</p>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <h2>Share your filtered photo with friends</h2>
+                    <p>Choose and share the best one with your friends!</p>
+                </div>
+            </li>
+
+        </ol>
     </div>
-    </ul>
-    <ul>
-  <div>
-    <h2>Choose filters</h2>
-    <p>Select up to 5 of your favorite filters to use with Glassagram. You can always come back to change up your selection.</p>
-
-  </div>
-        <ul>
-    <div>
-        <h2>Take a picture!</h2>
-        <p></p>
-    </div>
-            <ul>
-    <div>
-        <h2>Share your picture with Glassagram</h2>
-        <p></p>
-    </div>
-                <ul>
-    <div>
-        <h2>Share your filtered photo with friends</h2>
-        <p>Glassagram will apply all the filters you selected and send you an image bundle for you to choose from. Share the best one with your friends!</p>
-    </div>
-
-</ol>
-
+</div>
 <script
     src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script src="/static/bootstrap/js/bootstrap.min.js"></script>

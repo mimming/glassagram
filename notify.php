@@ -25,11 +25,12 @@
 
 // First try: the content length header
 header("Content-length: 2");
-echo "OK";
 
 // Next, assuming it didn't work, attempt to close the output buffer by setting the time limit.
 ignore_user_abort(true);
 set_time_limit(0);
+
+
 
 // And one more thing to try: forking the heavy lifting into a new process. Yeah, crazy eh?
 
@@ -37,9 +38,11 @@ if(function_exists('pcntl_fork')) {
   $pid = pcntl_fork();
   if ($pid == -1) {
     error_log("could not fork!");
+    echo "OK";
     exit();
   } else if ($pid) {
     // fork worked! but I'm the parent. time to exit.
+    echo "OK";
     exit();
   }
 }
@@ -86,26 +89,17 @@ $timeline_item_id = $request['itemId'];
 
 print "item id: " . $timeline_item_id;
 
-$timeline_item = $mirror_service->timeline->get($timeline_item_id);
 
-$attachment = $timeline_item['attachments'][0];
+$timeline_item = new Google_TimelineItem($mirror_service->timeline->get($timeline_item_id));
 
+$attachments = $timeline_item->getAttachments();
+$attachment = $attachments[0];
 
 $bytes = downloadAttachment( $timeline_item_id, $attachment);
 
 error_log("got bytes ");
 
 $bundle_id = md5(uniqid($_SESSION['userid'].time()));
-
-// Update the original timeline item to add it to the bundle and make it the cover
-//$timeline_item->setBundleId($bundle_id);
-//$timeline_item->setIsBundleCover(true);
-//$timeline_item->setText("Glassagram made your photo better");
-//$notification = new Google_NotificationConfig();
-//$notification->setLevel("DEFAULT");
-//$timeline_item->setNotification($notification);
-
-//patchTimelineItem($mirror_service, $timeline_item, null, null);
 
 // add the fun images in new timeline items in the same bundle
 $original_image = imagecreatefromstring($bytes);
@@ -114,16 +108,27 @@ error_log("filtered on image ");
 
 $filtered_images = gd_process_image ($original_image);
 foreach ($filtered_images as $filtered_image) {
-    $timeline_item = new Google_TimelineItem();
-    $timeline_item->setBundleId($bundle_id);
-    $menuItems = array();
-    $shareMenuItem = new Google_MenuItem();
-    $shareMenuItem->setAction("SHARE");
-    array_push($menuItems, $shareMenuItem);
-    $deleteMenuItem = new Google_MenuItem();
-    $deleteMenuItem->setAction("DELETE");
-    array_push($menuItems, $deleteMenuItem);
-    $timeline_item->setMenuItems($menuItems);
-    insertTimelineItem($mirror_service, $timeline_item, "image/jpeg", $filtered_image );
+  $bundle_card = new Google_TimelineItem();
+  $bundle_card->setBundleId($bundle_id);
+  $menuItems = array();
+  $shareMenuItem = new Google_MenuItem();
+  $shareMenuItem->setAction("SHARE");
+  array_push($menuItems, $shareMenuItem);
+  $deleteMenuItem = new Google_MenuItem();
+  $deleteMenuItem->setAction("DELETE");
+  array_push($menuItems, $deleteMenuItem);
+  $bundle_card->setMenuItems($menuItems);
+  insertTimelineItem($mirror_service, $bundle_card, "image/jpeg", $filtered_image );
 }
 
+// Update the original timeline item to add it to the bundle and make it the cover
+// Do this last so the "ding" comes after everything else is done processing
+$timeline_item->setBundleId($bundle_id);
+$timeline_item->setIsBundleCover(true);
+$timeline_item->setText("Glassagram made your photo better");
+$notification = new Google_NotificationConfig();
+$notification->setLevel("DEFAULT");
+$timeline_item->setNotification($notification);
+
+
+updateTimelineItem($mirror_service, $timeline_item_id, $timeline_item);

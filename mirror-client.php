@@ -40,19 +40,14 @@ function insertTimelineItem($service, $timelineItem, $contentType, $attachment)
   }
 }
 
-function patchTimelineItem($service, $timelineItem, $contentType, $attachment)
+function patchTimelineItem($service, $id, $timelineItem)
 {
-  try {
-    $optParams = array();
-    if ($contentType != null && $attachment != null) {
-      $optParams['data'] = $attachment;
-      $optParams['mimeType'] = $contentType;
-    }
-    return $service->timeline->patch($timelineItem, $optParams);
-  } catch (Exception $e) {
-    print 'An error ocurred: ' . $e->getMessage();
-    return null;
-  }
+  return $service->timeline->patch($id ,$timelineItem);
+}
+
+function updateTimelineItem($service, $id, $timelineItem)
+{
+  return $service->timeline->update($id, $timelineItem);
 }
 
 

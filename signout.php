@@ -40,7 +40,7 @@ session_destroy();
         <div class="container">
             <a class="brand" href="#">Glassagram</a>
             <div class="nav-collapse collapse">
-                <form class="navbar-form pull-right" action="<?= $base_url ?>" method="post">
+                <form class="navbar-form pull-right" action="<?= $base_url ?>/glassagram.php" method="post">
                     <button type="submit" class="btn">Sign in</button>
                 </form>
             </div>

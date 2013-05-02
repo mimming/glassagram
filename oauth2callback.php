@@ -45,11 +45,11 @@ if (isset($_GET['code'])) {
   bootstrap_new_user();
 
   // redirect back to the base url
-  header('Location: ' . $base_url);
+  header('Location: ' . $base_url.'/glassagram.php');
 } elseif (!isset($_SESSION['userid']) || get_credentials($_SESSION['userid']) == null) {
   // Handle step 1 of the OAuth 2.0 dance - redirect to Google
   header('Location: ' . $client->createAuthUrl());
 } else {
   // We're authenticated, redirect back to base_url
-  header('Location: ' . $base_url);
+  header('Location: ' . $base_url.'/glassagram.php');
 }

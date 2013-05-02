@@ -9,92 +9,7 @@
 // * Date: 4/21/13
 // * Time: 4:27 PM
 // */
-//
-////function filter_images() {
-//
-//error_log("notify got a POST");
-//
-//// Parse the request body
-//$request_bytes = @file_get_contents('php://input');
-//$request = json_decode($request_bytes, true);
-//error_log("notify decoded json " . $request_bytes);
-//
-//// A notification has come in. If there's an attached photo, bounce it back
-//// to the user
-//$user_id = $request['userToken'];
-//error_log("notify found user " . $user_id);
-//
-//$access_token = get_credentials($user_id);
-//
-//$client = get_google_api_client();
-//$client->setAccessToken($access_token);
-//error_log("notify found access token " . $access_token);
-//
-//// A glass service for interacting with the Mirror API
-//$mirror_service = new Google_MirrorService($client);
-//
-//$timeline_item_id = $request['itemId'];
-//
-//print "item id: " . $timeline_item_id;
-//
-//$timeline_item = $mirror_service->timeline->get($timeline_item_id);
-//
-//$attachment = $timeline_item['attachments'][0];
-//
-//
-//$bytes = downloadAttachment( $timeline_item_id, $attachment);
-//
-//
-//error_log("got bytes ");
-//
-//// TODO: get a bundle id (unique number)
-////$bundle_id = 42;
-//$bundle_id = md5(uniqid($_SESSION['userid'].time()));
-//$original_image = imagecreatefromstring($bytes);
-//
-//error_log("filtered on image ");
-//
-//$filtered_images = gd_process_image ($original_image);
-//foreach ($filtered_images as $filtered_image) {
-//    $timeline_item = new Google_TimelineItem();
-//    $timeline_item->setBundleId($bundle_id);
-//    //$timeline_item->setText("Glassagram");
-//    $menuItems = array();
-//    $shareMenuItem = new Google_MenuItem();
-//    $shareMenuItem->setAction("SHARE");
-//    array_push($menuItems, $shareMenuItem);
-//    $deleteMenuItem = new Google_MenuItem();
-//    $deleteMenuItem->setAction("DELETE");
-//    array_push($menuItems, $deleteMenuItem);
-//    $timeline_item->setMenuItems($menuItems);
-//    insertTimelineItem($mirror_service, $timeline_item, "image/jpeg", $filtered_image );
-//}
 
-// do gd on $bytes
-/*
-imagefilter($original_image, IMG_FILTER_GRAYSCALE);
-ob_start();
-imagejpeg($original_image);
-$final_image = ob_get_contents();
-ob_end_clean();
-*/
-
-// create the item
-/*
-$timeline_item = new Google_TimelineItem();
-$timeline_item->setBundleId();
-$timeline_item->setText("now with more grayscale");
-$menuItems = array();
-$menuItem = new Google_MenuItem();
-$menuItem->setAction("SHARE");
-array_push($menuItems, $menuItem);
-$menuItem->setAction("DELETE");
-array_push($menuItems, $menuItem);
-insertTimelineItem($mirror_service, $timeline_item, "image/jpeg", $final_image );
-
-*/
-
-//}
 
 /** Apply and deliver the image and clean up */
 function gd_filter_image($image_path, $filter_name)
@@ -118,7 +33,7 @@ function gd_filter_image($image_path, $filter_name)
 
 function gd_process_image ($src) {
 
-  $filters = array('antique','blackwhite','boost','sepia');
+  $filters = array('antique','blackwhite','boost','sepia','highkey');
 
   $filtered_images = array();
     foreach ($filters as $filter_name) {
@@ -158,7 +73,8 @@ function gd_crop_image($src) {
         //$x2 = min($width, $center_x + $target_dimension_half);
         //$y2 = min($height, $center_y + $target_dimension_half);
         $im = imagecreatetruecolor($target_dimension, $target_dimension);
-        imagecopyresampled($im, $src,0, 0,$x1, $y1,$target_dimension,$target_dimension,$target_dimension,$target_dimension);
+        imagecopy($im, $src, 0, 0, $x1, $y1, $target_dimension, $target_dimension); // faster than imagecopyresampled if not resampling
+        //imagecopyresampled($im, $src,0, 0,$x1, $y1,$target_dimension,$target_dimension,$target_dimension,$target_dimension);
     }
     return $im; // image is already a square
 }
@@ -197,13 +113,22 @@ function gd_filter_chrome($im)
     return $im;
 }
 
-/** Apply 'Lift' preset */
-function gd_filter_lift($im)
+/** Apply 'High Key' preset */
+function gd_filter_highkey($im)
 {
-    imagefilter($im, IMG_FILTER_BRIGHTNESS, 50);
-    imagefilter($im, IMG_FILTER_CONTRAST, -25);
-    imagefilter($im, IMG_FILTER_COLORIZE, 75, 0, 25);
-    $im = gd_apply_overlay($im, 'emulsion', 100);
+    $imagex = imagesx($im);
+    $imagey = imagesy($im);
+    for ($x = 0; $x <$imagex; ++$x) {
+        for ($y = 0; $y <$imagey; ++$y) {
+            $rgb = imagecolorat($im, $x, $y);
+            $TabColors=imagecolorsforindex ( $im , $rgb );
+            $color_r=floor(255-(( (255-$TabColors['red'])*(255-$TabColors['red']) )/255));
+            $color_g=floor(255-(( (255-$TabColors['green'])*(255-$TabColors['green']) )/255));
+            $color_b=floor(255-(( (255-$TabColors['blue'])*(255-$TabColors['blue']) )/255));
+            $newcol = imagecolorallocate($im, $color_r,$color_g,$color_b);
+            imagesetpixel($im, $x, $y, $newcol);
+        }
+    }
     return $im;
 }
 

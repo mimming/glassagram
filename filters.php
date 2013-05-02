@@ -129,6 +129,7 @@ function gd_filter_highkey($im)
             imagesetpixel($im, $x, $y, $newcol);
         }
     }
+    imagefilter($im, IMG_FILTER_BRIGHTNESS, 40);
     return $im;
 }
 

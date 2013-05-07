@@ -56,38 +56,33 @@ require_once 'google-api-php-client/src/contrib/Google_MirrorService.php';
 require_once 'util.php';
 require_once 'filters.php';
 
-error_log("notify ran");
-
 if($_SERVER['REQUEST_METHOD'] != "POST") {
   echo "method not supported";
   exit();
 }
 
-
-error_log("notify got a POST");
-
 // Parse the request body
 $request_bytes = @file_get_contents('php://input');
 $request = json_decode($request_bytes, true);
-error_log("notify decoded json " . $request_bytes);
+//error_log("notify decoded json " . $request_bytes);
 
 // A notification has come in. If there's an attached photo, bounce it back
 // to the user
 $user_id = $request['userToken'];
-error_log("notify found user " . $user_id);
+//error_log("notify found user " . $user_id);
 
 $access_token = get_credentials($user_id);
 
 $client = get_google_api_client();
 $client->setAccessToken($access_token);
-error_log("notify found access token " . $access_token);
+//error_log("notify found access token " . $access_token);
 
 // A glass service for interacting with the Mirror API
 $mirror_service = new Google_MirrorService($client);
 
 $timeline_item_id = $request['itemId'];
 
-print "item id: " . $timeline_item_id;
+//print "item id: " . $timeline_item_id;
 
 
 $timeline_item = new Google_TimelineItem($mirror_service->timeline->get($timeline_item_id));
@@ -97,14 +92,14 @@ $attachment = $attachments[0];
 
 $bytes = downloadAttachment( $timeline_item_id, $attachment);
 
-error_log("got bytes ");
+//error_log("got bytes ");
 
 $bundle_id = md5(uniqid($_SESSION['userid'].time()));
 
 // add the fun images in new timeline items in the same bundle
 $original_image = imagecreatefromstring($bytes);
 
-error_log("filtered on image ");
+//error_log("filtered on image ");
 
 $filtered_images = gd_process_image ($original_image);
 foreach ($filtered_images as $filtered_image) {
